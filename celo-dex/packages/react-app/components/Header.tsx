@@ -41,7 +41,7 @@ export default function Header() {
                 {componentInitialized && address ? (
                   <button
                     type="button"
-                    className="bg-gradient-to-r from-[#2B59FF] to-[#BB2BFF]  inline-flex content-center place-items-center rounded-md py-2 px-5 text-md font-medium text-snow "
+                    className="bg-blue-600 text-white inline-flex content-center place-items-center rounded-full py-2 px-5 text-md font-medium text-snow "
                     onClick={disconnect}
                   >
                     {shortenAddress(address)}
@@ -49,7 +49,7 @@ export default function Header() {
                 ) : (
                   <button
                     type="button"
-                    className="bg-gradient-to-r from-[#2B59FF] to-[#BB2BFF]  inline-flex content-center place-items-center rounded-md py-2 px-5 text-md font-medium text-snow"
+                    className="bg-blue-600 text-white inline-flex content-center place-items-center rounded-full py-2 px-5 text-md font-medium text-snow"
                     onClick={() =>
                       connect().catch((e) => console.log((e as Error).message))
                     }

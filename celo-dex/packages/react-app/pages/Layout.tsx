@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import Header from "./Header";
+import Header from "../components/Header";
 
 interface Props {
     children: ReactNode
@@ -9,7 +9,7 @@ const Layout: FC<Props> = ({children}) => {
         <>
             <div className="bg-hero-desktop-bg bg-cover bg-no-repeat h-screen">
             <Header />
-                <div className="py-16 max-w-6xl mx-auto space-y-8 sm:px-6 lg:px-8">
+                <div className="py-16 max-w-7xl mx-auto mt-16 space-y-8 sm:px-6 lg:px-8">
                     {children}
                 </div>
             

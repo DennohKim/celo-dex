@@ -10,8 +10,9 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { CeloProvider, Alfajores } from "@celo/react-celo";
 import "@celo/react-celo/lib/styles.css";
 import { Outfit } from '@next/font/google'
+import Layout from "./Layout";
 
-import Layout from "../components/Layout";
+
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit', })
 
@@ -35,10 +36,7 @@ function App({ Component, pageProps }: AppProps) {
         <Hydrate state={pageProps.dehydratedState}>
         <main className={`${outfit.variable} font-sans`}>
           <Layout>
-            
             <Component {...pageProps} />
-            
-            
           </Layout>
           </main>
         </Hydrate>

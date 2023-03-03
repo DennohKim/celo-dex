@@ -33,5 +33,8 @@
     "keywords": [
         "celo-composer",
         "celo"
-    ]
+    ],
+    "dependencies": {
+        "next": "^13.2.3"
+    }
 }

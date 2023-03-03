@@ -6,7 +6,7 @@ import { Token } from "@/typings";
 
 const Home = ({tokens}: {tokens: Array<Token>}) => {
   return (
-    <div className="text-white w-11/12 mx-auto grid grid-cols-1 sm:grid-cols-2 sm:space-x-6 items-center">
+    <div className="text-white mx-auto grid grid-cols-1 sm:grid-cols-2 sm:space-x-6 items-center">
       <div className="flex flex-col space-y-4 ">
         <h1 className="text-3xl font-bold">
           The Most User-Friendly <span className="bg-gradient-to-r from-[#FFC947] to-[#FC6739] text-transparent bg-clip-text">Token Swap App</span> is Here

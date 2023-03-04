@@ -6,7 +6,7 @@ export interface Token {
   id?: string;
   symbol?: string;
   name?: string;
-  platforms?: Platform;
+  platforms: Platform;
 }
 
 export interface ModalProps {
@@ -22,3 +22,5 @@ export interface Summary {
   celo: BigNumber;
   balances: { symbol: StableToken; value?: BigNumber; error?: string }[];
 }
+
+export type Abi = []

@@ -1,9 +1,11 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useCelo } from "@celo/react-celo";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { shortenAddress } from "@/utils/shortenAddress";
+
+
+
 
 export default function Header() {
   let [componentInitialized, setComponentInitialized] = useState(false);
@@ -14,6 +16,8 @@ export default function Header() {
       setComponentInitialized(true);
     }
   }, [initialised]);
+
+
 
   return (
     <Disclosure as="nav" className="">
@@ -39,13 +43,17 @@ export default function Header() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {componentInitialized && address ? (
-                  <button
-                    type="button"
-                    className="bg-blue-600 text-white inline-flex content-center place-items-center rounded-full py-2 px-5 text-md font-medium text-snow "
-                    onClick={disconnect}
-                  >
-                    {shortenAddress(address)}
-                  </button>
+                  <div className="flex">
+                   
+
+                    <button
+                      type="button"
+                      className="bg-blue-600 text-white inline-flex content-center place-items-center rounded-full py-2 px-5 text-md font-medium text-snow "
+                      onClick={disconnect}
+                    >
+                      {shortenAddress(address)}
+                    </button>
+                  </div>
                 ) : (
                   <button
                     type="button"

@@ -15,3 +15,10 @@ export interface ModalProps {
   choice: string;
   selectToken: (token: Token, choice: string) => void;
 }
+
+export interface Summary {
+  name: string;
+  address: string;
+  celo: BigNumber;
+  balances: { symbol: StableToken; value?: BigNumber; error?: string }[];
+}

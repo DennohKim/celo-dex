@@ -91,7 +91,69 @@ export default function TokenSwap() {
     setGasPrice(priceResult.estimatedGas);
   };
 
+  const getQuote = async () => {
+    if (!tokenFrom.symbol || !tokenTo.symbol || !amountEntered) return;
 
+    // Get amount by calculating it from the smallest base unit of a standard erc20 token which is 18
+    let amount = Number(amountEntered) * 10 ** 18;
+
+    // set the params
+    const params = {
+      sellToken: tokenFrom.platforms.celo
+        ? tokenFrom.platforms.celo
+        : tokenFrom.symbol,
+      buyToken: tokenTo.platforms.celo
+        ? tokenTo.platforms.celo
+        : tokenTo.symbol,
+      sellAmount: amount,
+      takerAddress: address,
+    };
+
+    const response = await fetch(
+      `https://celo.api.0x.org/swap/v1/quote?${qs.stringify(params)}`
+    );
+
+    // Await and parse the JSON response
+    const priceResult = await response.json();
+
+    const pricesConverted = priceResult.buyAmount / 10 ** 18;
+    setAmountTo(pricesConverted);
+
+    setGasPrice(priceResult.estimatedGas);
+
+    return priceResult;
+  };
+
+  const swap = async () => {
+    // Get and return the created quote
+    const priceQuote = await getQuote();
+
+    // Create a web3 object from the ABI
+    const web3 = new Web3(Web3.givenProvider);
+
+    // Get the token from addess
+    const tokenFromAddress = tokenFrom.platforms.celo;
+
+    // Create the contract instance
+    const Contract = new web3.eth.Contract(ERC20ABI, tokenFromAddress);
+    console.log("Contract instance set-up: ", Contract);
+
+    // Get the Max Approved amount of the token and convert it using BigNumber
+    const maxApproval = new BigNumber(2).pow(256).minus(1);
+    console.log("approval amount: ", maxApproval);
+
+    // Grant the spender address approval to spend the user's tokens
+    const tx = await Contract.methods
+      .approve(priceQuote.allowanceTarget, maxApproval)
+      .send({ from: address })
+      .then((res: NextApiResponse) => {
+        console.log("tx: ", res);
+      });
+
+    // Make the swap now
+    const txRecipt = await web3.eth.sendTransaction(priceQuote);
+    console.log("Swap transaction: ", txRecipt);
+  };
 
   return (
     <>

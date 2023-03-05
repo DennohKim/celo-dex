@@ -23,4 +23,15 @@ export interface Summary {
   balances: { symbol: StableToken; value?: BigNumber; error?: string }[];
 }
 
-export type Abi = []
+type AbiItem = {
+  constant: boolean;
+  inputs: { name: string; type: string }[];
+  name: string;
+  outputs: { name: string; type: string }[];
+  payable: boolean;
+  stateMutability: string;
+  type: string;
+  anonymous?: boolean;
+};
+
+export type Abi = AbiItem[];

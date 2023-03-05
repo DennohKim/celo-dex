@@ -31,7 +31,7 @@ export default function TokensModal({
                   {tokensList.map((item) => (
                     <div
                       key={item.id}
-                      onClick={() => selectToken(item, choice)}
+                      onClick={() => selectToken(item as any, choice)}
                       className="w-full px-4 mb-2 py-2 cursor-pointer justify-between border-b-[0.5px] hover:bg-[#242424] flex flex-col "
                     >
                       <h1 className="text-xl ">{item.name}</h1>

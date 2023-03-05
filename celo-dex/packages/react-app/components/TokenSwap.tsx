@@ -1,4 +1,4 @@
-import { Token } from "@/typings";
+import { Token, Abi, AbiItem } from "@/typings";
 import React, { useState } from "react";
 import TokensModal from "./TokensModal";
 import { BigNumber } from "bignumber.js";
@@ -137,7 +137,7 @@ export default function TokenSwap() {
     const tokenFromAddress = tokenFrom.platforms.celo;
 
     // Create the contract instance
-    const Contract = new web3.eth.Contract(ERC20ABI, tokenFromAddress);
+    const Contract = new web3.eth.Contract(ERC20ABI as any, tokenFromAddress);
     console.log("Contract instance set-up: ", Contract);
 
     // Get the Max Approved amount of the token and convert it using BigNumber

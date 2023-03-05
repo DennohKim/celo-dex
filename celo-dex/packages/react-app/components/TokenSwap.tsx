@@ -9,7 +9,9 @@ import qs from "qs";
 import { NextApiResponse } from "next";
 
 export default function TokenSwap() {
+  // Extract the account address from their wallet
   let { address } = useCelo();
+  
   const [tokenFrom, setTokenFrom] = useState<Token>({
     id: "celo-dollar",
     symbol: "cusd",

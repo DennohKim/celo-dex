@@ -17,7 +17,7 @@ export default function TokenSwap() {
     symbol: "cusd",
     name: "Celo Dollar",
     platforms: {
-      celo: "0x765de816845861e75a25fca122bb6898b8b1282a",
+      "celo": "0x765de816845861e75a25fca122bb6898b8b1282a",
       "near-protocol": "cusd.token.a11bd.near",
     },
   });

@@ -1,45 +1,45 @@
 {
-    "name": "celo-dex",
-    "version": "1.0.0",
-    "description": "Custom Celo Composer project.",
-    "private": true,
-    "author": "Celo",
-    "license": "MIT",
-    "scripts": {
-        "hardhat:test": "yarn workspace @celo-dex/hardhat test",
-        "hardhat:test-local": "yarn workspace @celo-dex/hardhat test-local",
-        "hardhat:accounts": "yarn workspace @celo-dex/hardhat accounts",
-        "hardhat:devchain": "yarn workspace @celo-dex/hardhat devchain",
-        "hardhat:deploy": "yarn workspace @celo-dex/hardhat deploy",
-        "hardhat:deploy-reset-watch": "yarn workspace @celo-dex/hardhat deploy-reset-watch",
-        "hardhat:watch": "yarn workspace @celo-dex/hardhat watch",
-        "hardhat:fork-mainnet": "yarn workspace @celo-dex/hardhat fork-mainnet",
-        "react-app:dev": "yarn workspace @celo-dex/react-app dev",
-        "react-app:build": "yarn workspace @celo-dex/react-app build",
-        "react-app:start": "yarn workspace @celo-dex/react-app start",
-        "react-app:lint": "yarn workspace @celo-dex/react-app lint"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/celo-org/celo-composer.git"
-    },
-    "bugs": {
-        "url": "https://github.com/celo-org/celo-composer/issues"
-    },
-    "homepage": "https://github.com/celo-org/celo-composer/blob/main/README.md",
-    "workspaces": [
-        "packages/*"
-    ],
-    "keywords": [
-        "celo-composer",
-        "celo"
-    ],
-    "dependencies": {
-        "next": "^13.2.3",
-        "qs": "^6.11.0",
-        "web3": "^1.3.6"
-    },
-    "devDependencies": {
-        "@types/qs": "^6.9.7"
-    }
+  "name": "celo-dex",
+  "version": "1.0.0",
+  "description": "Custom Celo Composer project.",
+  "private": true,
+  "author": "Celo",
+  "license": "MIT",
+  "scripts": {
+    "hardhat:test": "yarn workspace @celo-dex/hardhat test",
+    "hardhat:test-local": "yarn workspace @celo-dex/hardhat test-local",
+    "hardhat:accounts": "yarn workspace @celo-dex/hardhat accounts",
+    "hardhat:devchain": "yarn workspace @celo-dex/hardhat devchain",
+    "hardhat:deploy": "yarn workspace @celo-dex/hardhat deploy",
+    "hardhat:deploy-reset-watch": "yarn workspace @celo-dex/hardhat deploy-reset-watch",
+    "hardhat:watch": "yarn workspace @celo-dex/hardhat watch",
+    "hardhat:fork-mainnet": "yarn workspace @celo-dex/hardhat fork-mainnet",
+    "react-app:dev": "yarn workspace @celo-dex/react-app dev",
+    "react-app:build": "yarn workspace @celo-dex/react-app build --output public",
+    "react-app:start": "yarn workspace @celo-dex/react-app start",
+    "react-app:lint": "yarn workspace @celo-dex/react-app lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celo-org/celo-composer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/celo-org/celo-composer/issues"
+  },
+  "homepage": "https://github.com/celo-org/celo-composer/blob/main/README.md",
+  "workspaces": [
+    "packages/*"
+  ],
+  "keywords": [
+    "celo-composer",
+    "celo"
+  ],
+  "dependencies": {
+    "next": "^13.2.3",
+    "qs": "^6.11.0",
+    "web3": "^1.3.6"
+  },
+  "devDependencies": {
+    "@types/qs": "^6.9.7"
+  }
 }

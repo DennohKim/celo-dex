@@ -40,3 +40,5 @@ nb-configuration.xml
 *.swp
 
 PROPOSAL.md
+
+.vercel

@@ -15,7 +15,7 @@
     "hardhat:watch": "yarn workspace @celo-dex/hardhat watch",
     "hardhat:fork-mainnet": "yarn workspace @celo-dex/hardhat fork-mainnet",
     "react-app:dev": "yarn workspace @celo-dex/react-app dev",
-    "react-app:build": "yarn workspace @celo-dex/react-app build --output public",
+    "react-app:build": "yarn workspace @celo-dex/react-app build ",
     "react-app:start": "yarn workspace @celo-dex/react-app start",
     "react-app:lint": "yarn workspace @celo-dex/react-app lint"
   },

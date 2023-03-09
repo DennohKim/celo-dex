@@ -118,7 +118,7 @@ export default function Header() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {componentInitialized && address ? (
-                  <div className="flex space-x-6">
+                  <div className="flex flex-col xs:flex-row gap-3 mt-10 xs:mt-0 space-x-6">
                     <div className="">
                       <p className=" text-white inline-flex content-center place-items-center rounded-full py-2 px-5 text-md font-medium text-snow bg-gray-500/30">
                         CELO BAL: {Web3.utils.fromWei(summary.celo.toFixed())}
